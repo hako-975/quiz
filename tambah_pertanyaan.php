@@ -61,7 +61,8 @@
     <?php include_once 'navbar.php'; ?>
 
     <div class="container anti-navbar">
-        <form method="post" class="form form-100">
+        <a href="detail_quiz.php?id_quiz=<?= $id_quiz; ?>" class="button">Kembali</a>
+        <form method="post" class="form form-100 mt-10">
             <h3>Tambah Pertanyaan ke <?= $pertanyaanKe+1; ?> - <?= $data_quiz['nama_quiz']; ?></h3>
             <hr>
             <div class="row">
