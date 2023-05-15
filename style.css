@@ -118,6 +118,14 @@ body {
   border-radius: 10px;
 }
 
+.form-100 {
+  max-width: 100%;
+}
+
+.width-100 {
+  width: 100%;
+}
+
 .form h1, .form h2 {
   margin: 5px 0;
 }
@@ -229,18 +237,19 @@ body {
 }
 
 .form-cari input {
-  border-radius: 20px 0 0 20px;
+  border-radius: 10px 0 0 10px;
   height: 40px;
   margin: 0;
   padding: 15px;
+  border: none;
 }
 
 .form-cari button {
-  background-color: #0e153a;
+  background-color: #FF9537;
   border: none;
   color: white;
   font-size: 16px;
-  border-radius: 0 20px 20px 0;
+  border-radius: 0 10px 10px 0;
   height: 40px;
   margin: 0;
   padding: 10px 20px;
@@ -319,7 +328,7 @@ body {
 }
 
 .card {
-  background-color: #0e153a;
+  background-color: #57312B;
   color: #fff;
   border-radius: 10px;
   padding: 10px 30px;
@@ -329,4 +338,8 @@ body {
 
 .mr-10 {
   margin-right: 10px;
+}
+
+.mt-10 {
+  margin-top: 10px;
 }
