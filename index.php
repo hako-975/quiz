@@ -41,8 +41,8 @@
     	<?php if (isset($_POST['cari'])): ?>
         	<div class="clear">
         		<h3>Cari: <?= $_POST['cari']; ?></h3>
-        		<h3>Ditemukan: <?= mysqli_num_rows($karyawan); ?></h3>
-	        	<a href="detail_quiz.php?id_quiz=" class="button">Reset</a>
+        		<h3>Ditemukan: <?= mysqli_num_rows($quiz); ?></h3>
+	        	<a href="detail_quiz.php" class="button">Reset</a>
         	</div>
     	<?php endif ?>
 		<div class="card-container clear">
