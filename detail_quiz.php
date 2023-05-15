@@ -32,9 +32,13 @@
 
     <div class="container anti-navbar">
         <form method="post" class="form form-100">
-            <h3>Detail Quiz - <?= $quiz['nama_quiz']; ?></h3>
+            <h3>Detail Quiz: <?= $quiz['nama_quiz']; ?></h3>
+            <h3>Kode Quiz: <span id="kode_quiz"><?= $quiz['kode_quiz']; ?></span></h3>
+            <h3>Soal Diacak: <?= ($quiz['soal_diacak']) ? 'Ya': 'Tidak'; ?></h3>
+            <button type="button" class="button" onclick="copyContent()">Copy</button>
+            <a href="ubah_quiz.php?id_quiz=<?= $quiz['id_quiz']; ?>" class="button">Ubah</a>
+            <a href="hapus_quiz.php?id_quiz=<?= $quiz['id_quiz']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus Quiz <?= $quiz['nama_quiz']; ?>?')" class="button">Hapus</a>
             <hr>
-            <h4 class="float-left">Soal Diacak - <?= ($quiz['soal_diacak']) ? 'Ya': 'Tidak'; ?></h4>
             <a href="tambah_pertanyaan.php?id_quiz=<?= $quiz['id_quiz']; ?>" class="button float-right mt-10">Tambah Pertanyaan</a>
             <div class="table-responsive clear mt-10">
                 <table cellpadding="10" cellspacing="0" border="1">
@@ -69,5 +73,23 @@
         </form>
     </div>
 
+    <script>
+        function copyContent() {
+          var contentElement = document.getElementById("kode_quiz");
+          
+          var range = document.createRange();
+          range.selectNode(contentElement);
+          
+          var selection = window.getSelection();
+          selection.removeAllRanges();
+          selection.addRange(range);
+          
+          document.execCommand("copy");
+          
+          selection.removeAllRanges();
+
+          alert("Kode Quiz berhasil ter-copy!");
+        }
+      </script>
 </body>
 </html>
