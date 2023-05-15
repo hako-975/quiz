@@ -106,10 +106,13 @@ body {
   border: none;
   text-align: center; 
   transition: all 0.2s ease-in-out;
+  user-select: none;
 }
 
 .button:hover,
 .button:focus {
+  user-select: none;
+  cursor: pointer;
   background-color: #FF7C23;
   color: #fff;
   text-decoration: none;
@@ -132,7 +135,7 @@ body {
   width: 100%;
 }
 
-.form h1, .form h3 {
+.form h1, .form h2, .form h3 {
   margin: 5px 0;
 }
 
@@ -177,7 +180,15 @@ body {
   float: left;
 }
 
+.float-left-sm {
+  float: left;
+}
+
 .float-right {
+  float: right;
+}
+
+.float-right-sm {
   float: right;
 }
 
@@ -340,6 +351,10 @@ body {
   padding: 10px 30px;
   text-decoration: none;
   text-align: center;
+}
+
+.m-0 {
+  margin: 0;
 }
 
 .mr-10 {

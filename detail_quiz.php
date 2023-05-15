@@ -11,9 +11,9 @@
     
     $id_quiz = $_GET['id_quiz'];
 
-    $quiz = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT * FROM quiz WHERE id_user = '$id_user' AND id_quiz = '$id_quiz'"));
+    $data_quiz = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT * FROM quiz WHERE id_user = '$id_user' AND id_quiz = '$id_quiz'"));
 
-    if (!$quiz) {
+    if (!$data_quiz) {
         header("Location: index.php");
         exit;
     }
@@ -25,21 +25,22 @@
 <html>
 <head>
     <?php include_once 'head.php'; ?>
-    <title>Detail Quiz - <?= $quiz['nama_quiz']; ?></title>
+    <title>Detail Quiz - <?= $data_quiz['nama_quiz']; ?></title>
 </head>
 <body>
     <?php include_once 'navbar.php'; ?>
 
     <div class="container anti-navbar">
         <form method="post" class="form form-100">
-            <h3>Detail Quiz: <?= $quiz['nama_quiz']; ?></h3>
-            <h3>Kode Quiz: <span id="kode_quiz"><?= $quiz['kode_quiz']; ?></span></h3>
-            <h3>Soal Diacak: <?= ($quiz['soal_diacak']) ? 'Ya': 'Tidak'; ?></h3>
-            <button type="button" class="button" onclick="copyContent()">Copy</button>
-            <a href="ubah_quiz.php?id_quiz=<?= $quiz['id_quiz']; ?>" class="button">Ubah</a>
-            <a href="hapus_quiz.php?id_quiz=<?= $quiz['id_quiz']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus Quiz <?= $quiz['nama_quiz']; ?>?')" class="button">Hapus</a>
+            <h2>Detail Quiz: <?= $data_quiz['nama_quiz']; ?></h2>
+            <h3>Kode Quiz: <span id="kode_quiz"><?= $data_quiz['kode_quiz']; ?></span></h3>
+            <h3>Soal Diacak: <?= ($data_quiz['soal_diacak']) ? 'Ya': 'Tidak'; ?></h3>
+            <h3>Tanggal Dibuat: <?= $data_quiz['tanggal_dibuat']; ?></h3>
+            <a class="button" onclick="copyContent()">Copy</a>
+            <a href="ubah_quiz.php?id_quiz=<?= $data_quiz['id_quiz']; ?>" class="button">Ubah</a>
+            <a href="hapus_quiz.php?id_quiz=<?= $data_quiz['id_quiz']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus Quiz <?= $data_quiz['nama_quiz']; ?>?')" class="button">Hapus</a>
             <hr>
-            <a href="tambah_pertanyaan.php?id_quiz=<?= $quiz['id_quiz']; ?>" class="button float-right mt-10">Tambah Pertanyaan</a>
+            <a href="tambah_pertanyaan.php?id_quiz=<?= $data_quiz['id_quiz']; ?>" class="button float-right mt-10">Tambah Pertanyaan</a>
             <div class="table-responsive clear mt-10">
                 <table cellpadding="10" cellspacing="0" border="1">
                     <tr>

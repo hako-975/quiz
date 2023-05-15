@@ -48,7 +48,10 @@
 		<div class="card-container clear">
 		  <?php foreach ($quiz as $dq): ?>
 		  	<a href="detail_quiz.php?id_quiz=<?= $dq['id_quiz']; ?>" class="card">
-			  	<h4><?= $dq['nama_quiz']; ?></h4>
+			  	<h5 class="float-right-sm">Kode Quiz: <?= $dq['kode_quiz']; ?></h5>
+			  	<h4 class="clear m-0"><?= $dq['nama_quiz']; ?></h4>
+			  	<h5 class="float-left-sm">Diacak: <?= ($dq['soal_diacak']) ? 'Ya': 'Tidak'; ?></h5>
+			  	<h5 class="float-right-sm"><?= $dq['tanggal_dibuat']; ?></h5>
 			</a>
 		  <?php endforeach ?>
 		</div>
