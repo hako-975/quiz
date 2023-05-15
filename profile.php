@@ -18,20 +18,29 @@
 <body>
 	<div class="container anti-navbar">
 		<div class="profile">
-			<h2>Profile - <?= $data_user['username']; ?></h2>
+			<h3>Profile - <?= $data_user['username']; ?></h3>
 			<hr>
 	        <table class="table-profile">
 	        	<tr>
 	        		<th>Username</th>
-	        		<td>: <?= $data_user['username']; ?></td>
+	        		<td>:</td>
+	        		<td><?= $data_user['username']; ?></td>
 	        	</tr>
 	        	<tr>
 	        		<th>Nama Lengkap</th>
-	        		<td>: <?= $data_user['nama_lengkap']; ?></td>
+	        		<td>:</td>
+	        		<td><?= $data_user['nama_lengkap']; ?></td>
+	        	</tr>
+	        	<tr>
+	        		<td>
+				        <a href="ubah_profile.php" class="button mr-10">Ubah Profile</a>
+	        		</td>
+	        		<td></td>
+	        		<td>
+				        <a href="ubah_password.php" class="button">Ubah Password</a>
+	        		</td>
 	        	</tr>
 	        </table>
-	        <a href="ubah_profile.php" class="button mr-10">Ubah Profile</a>
-	        <a href="ubah_password.php" class="button">Ubah Password</a>
 		</div>
 	</div>
 	<?php include_once 'navbar.php'; ?>

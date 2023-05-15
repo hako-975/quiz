@@ -12,6 +12,12 @@ body {
   padding: 15px 50px;
 }
 
+@media (max-width: 576px) {
+  .container {
+    padding: 10px;
+  }
+}
+
 .navbar {
   background-color: #28BFCE;
 }
@@ -126,7 +132,7 @@ body {
   width: 100%;
 }
 
-.form h1, .form h2 {
+.form h1, .form h3 {
   margin: 5px 0;
 }
 
@@ -200,7 +206,7 @@ body {
   background-color: #fff;
 }
 
-.profile h1, .profile h2 {
+.profile h1, .profile h3 {
   margin-bottom: 0;
 }
 
@@ -342,4 +348,21 @@ body {
 
 .mt-10 {
   margin-top: 10px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  flex: 1;
+  padding: 0 10px;
+}
+
+@media (max-width: 768px) {
+  .col {
+    flex-basis: 100%;
+    width: 100%;
+  }
 }

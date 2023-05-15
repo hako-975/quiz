@@ -62,7 +62,7 @@
 
     <div class="container anti-navbar">
         <form method="post" class="form form-left">
-            <h2>Ubah Profile - <?= $data_user['username']; ?></h2>
+            <h3>Ubah Profile - <?= $data_user['username']; ?></h3>
             <hr>
             <label class="label" for="username">Username</label>
             <input class="input" type="text" id="username" name="username" value="<?= $data_user['username']; ?>" required>

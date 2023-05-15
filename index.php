@@ -31,7 +31,7 @@
 	<?php include_once 'navbar.php'; ?>
 
 	<div class="container anti-navbar">
-		<h2 class="float-left">Dashboard</h2>
+		<h3 class="float-left">Dashboard</h3>
 		<a href="tambah_quiz.php" class="float-right button mt-10">Tambah Quiz</a>
 		<div class="clear"></div>
 		<form method="post" class="form-cari float-right">
@@ -40,14 +40,14 @@
     	</form>
     	<?php if (isset($_POST['cari'])): ?>
         	<div class="clear">
-        		<h2>Cari: <?= $_POST['cari']; ?></h2>
-        		<h2>Ditemukan: <?= mysqli_num_rows($karyawan); ?></h2>
-	        	<a href="karyawan.php" class="button">Reset</a>
+        		<h3>Cari: <?= $_POST['cari']; ?></h3>
+        		<h3>Ditemukan: <?= mysqli_num_rows($karyawan); ?></h3>
+	        	<a href="detail_quiz.php?id_quiz=" class="button">Reset</a>
         	</div>
     	<?php endif ?>
 		<div class="card-container clear">
 		  <?php foreach ($quiz as $dq): ?>
-		  	<a href="karyawan.php" class="card">
+		  	<a href="detail_quiz.php?id_quiz=<?= $dq['id_quiz']; ?>" class="card">
 			  	<h4><?= $dq['nama_quiz']; ?></h4>
 			</a>
 		  <?php endforeach ?>

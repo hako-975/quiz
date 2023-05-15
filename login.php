@@ -53,7 +53,7 @@
 	<div class="container anti-navbar">
 		<form method="post" class="form">
 			<img src="img/logo.png" alt="Logo">
-		  	<h2 class="title">Form Login</h2>
+		  	<h3 class="title">Form Login</h3>
             <hr>
 		  	<label class="label" for="username">Username</label>
 		  	<input class="input" type="text" id="username" name="username" required>

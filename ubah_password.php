@@ -71,7 +71,7 @@
 
     <div class="container anti-navbar">
         <form method="post" class="form form-left">
-            <h2>Ubah Password - <?= $data_user['username']; ?></h2>
+            <h3>Ubah Password - <?= $data_user['username']; ?></h3>
             <hr>
             <label class="label" for="password_lama">Password Lama</label>
             <input class="input" type="password" id="password_lama" name="password_lama" required>
