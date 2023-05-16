@@ -31,23 +31,23 @@
 	<?php include_once 'navbar.php'; ?>
 
 	<div class="container anti-navbar">
-		<h3 class="float-left">Dashboard</h3>
+		<h2 class="float-left">Dashboard</h2>
 		<a href="tambah_quiz.php" class="float-right button mt-10">Tambah Quiz</a>
 		<div class="clear"></div>
-		<form method="post" class="form-cari float-right">
+		<form method="post" class="form-cari float-right mt-10">
 	  		<input class="input" type="text" id="cari" name="cari" placeholder="Cari" required value="<?= (isset($_POST['cari'])) ? $_POST['cari'] : ''; ?>">
 	  		<button type="submit" class="button align-right" name="btnCari">Cari</button>
     	</form>
     	<?php if (isset($_POST['cari'])): ?>
-        	<div class="clear">
+        	<div class="mt-10 clear">
         		<h3>Cari: <?= $_POST['cari']; ?></h3>
         		<h3>Ditemukan: <?= mysqli_num_rows($quiz); ?></h3>
 	        	<a href="detail_quiz.php" class="button">Reset</a>
         	</div>
     	<?php endif ?>
-		<div class="card-container clear">
+		<div class="card-container mt-10 clear">
 		  <?php foreach ($quiz as $dq): ?>
-		  	<a href="detail_quiz.php?id_quiz=<?= $dq['id_quiz']; ?>" class="card">
+		  	<a href="detail_quiz.php?id_quiz=<?= $dq['id_quiz']; ?>" class="card mt-10">
 			  	<h5 class="float-right-sm">Kode Quiz: <?= $dq['kode_quiz']; ?></h5>
 			  	<h4 class="clear m-0"><?= $dq['nama_quiz']; ?></h4>
 			  	<h5 class="float-left-sm">Diacak: <?= ($dq['soal_diacak']) ? 'Ya': 'Tidak'; ?></h5>

@@ -37,6 +37,7 @@
             <h3>Soal Diacak: <?= ($data_quiz['soal_diacak']) ? 'Ya': 'Tidak'; ?></h3>
             <h3>Tanggal Dibuat: <?= $data_quiz['tanggal_dibuat']; ?></h3>
             <a class="button" onclick="copyContent()">Copy</a>
+            <a href="start_quiz.php?kode_quiz=<?= $data_quiz['kode_quiz']; ?>" class="button">Mulai</a>
             <a href="ubah_quiz.php?id_quiz=<?= $data_quiz['id_quiz']; ?>" class="button">Ubah</a>
             <a href="hapus_quiz.php?id_quiz=<?= $data_quiz['id_quiz']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus Quiz <?= $data_quiz['nama_quiz']; ?>?')" class="button">Hapus</a>
             <hr>
