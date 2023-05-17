@@ -5,7 +5,16 @@
 	$data_quiz = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT * FROM quiz WHERE kode_quiz = '$kode_quiz'"));
 
 	$id_quiz = $data_quiz['id_quiz'];
-	$pertanyaan = mysqli_query($koneksi, "SELECT * FROM pertanyaan WHERE id_quiz = '$id_quiz'");
+    $data_quiz = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT * FROM quiz WHERE id_quiz = '$id_quiz'"));
+	
+	if ($data_quiz['soal_diacak'] == 1) {
+		$pertanyaan = mysqli_query($koneksi, "SELECT * FROM pertanyaan WHERE id_quiz = '$id_quiz' ORDER BY RAND()");
+	}
+	else
+	{
+		$pertanyaan = mysqli_query($koneksi, "SELECT * FROM pertanyaan WHERE id_quiz = '$id_quiz'");
+	}
+
 
 	if (isset($_POST['btnSelesai'])) {
 		$total_jawaban_benar = 0; 
