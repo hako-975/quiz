@@ -92,6 +92,6 @@
 
           alert("Kode Quiz berhasil ter-copy!");
         }
-      </script>
+    </script>
 </body>
 </html>
